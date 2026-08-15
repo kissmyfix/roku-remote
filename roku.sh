@@ -80,9 +80,7 @@ run_setup() {
         echo -n "  Scanning for Roku devices..."
         while IFS= read -r candidate; do
             local dname
-            dname=$(curl -sf --max-time 2 "http://${candidate}:8060/query/device-info" \
-
-                | sed -n 's|.*<friendly-device-name>\(.*\)</friendly-device-name>.*|\1|p')
+            dname=$(curl -sf --max-time 2 "http://${candidate}:8060/query/device-info" | sed -n 's|.*<friendly-device-name>\(.*\)</friendly-device-name>.*|\1|p')
             found_ips+=("$candidate")
             found_names+=("${dname:-Roku @ ${candidate}}")
         done < <(discover_rokus)
