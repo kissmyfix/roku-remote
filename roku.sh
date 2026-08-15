@@ -4,9 +4,9 @@
 #  CONFIG — populated by setup wizard on first run
 #  To reconfigure: run with --setup flag
 # ─────────────────────────────────────────────
-ROKU_IP="192.168.1.35"
-ROKU_APP_NAMES=("Jellyfin" )
-ROKU_APP_IDS=("592369" )
+ROKU_IP=""
+ROKU_APP_NAMES=()
+ROKU_APP_IDS=()
 # ─────────────────────────────────────────────
 
 SCRIPT="$(readlink -f "$0")"
@@ -81,6 +81,7 @@ run_setup() {
         while IFS= read -r candidate; do
             local dname
             dname=$(curl -sf --max-time 2 "http://${candidate}:8060/query/device-info" \
+
                 | sed -n 's|.*<friendly-device-name>\(.*\)</friendly-device-name>.*|\1|p')
             found_ips+=("$candidate")
             found_names+=("${dname:-Roku @ ${candidate}}")
@@ -210,6 +211,7 @@ reset_config() {
     echo "  Config cleared. Re-run the script to set up."
     exit 0
 }
+
 
 # ── Flag handling ─────────────────────────────
 case "$1" in
