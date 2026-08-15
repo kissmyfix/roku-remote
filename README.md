@@ -8,7 +8,7 @@ This project is built with a minimalist vision: it relies strictly on standard b
 You can download, make executable, and launch the configuration wizard instantly with a single command:
 
 ```bash
-curl -sSL https://githubusercontent.com -o roku.sh && chmod +x roku.sh && ./roku.sh
+curl -sSL https://raw.githubusercontent.com/kissmyfix/roku-remote/refs/heads/main/roku.sh -o roku.sh && chmod +x roku.sh && ./roku.sh
 ```
 
 ## Features
