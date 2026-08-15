@@ -3,6 +3,14 @@ Quick and dirty bash script for interacting with a Roku device from your Linux w
 
 This project is built with a minimalist vision: it relies strictly on standard built-in Linux utilities (bash, curl, sed). It features an automated setup wizard that auto-discovers your Roku over the local network using a transient Python SSDP probe—falling back to manual IP assignment gracefully if Python is missing.
 
+## Quick Installation
+
+You can download, make executable, and launch the configuration wizard instantly with a single command:
+
+```bash
+curl -sSL https://githubusercontent.com -o roku.sh && chmod +x roku.sh && ./roku.sh
+```
+
 ## Features
 
 * Zero Overhead: No heavy language runtimes or third-party packages required.
