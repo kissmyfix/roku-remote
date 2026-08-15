@@ -1,7 +1,7 @@
 # roku-remote
 Quick and dirty bash script for interacting with a Roku device from your Linux workstation.
 
-This project is built with a minimalist vision: it relies strictly on standard built-in Linux utilities (bash, curl, sed). It features an automated setup wizard that auto-discovers your Roku over the local network using a transient Python SSDP probe—falling back to manual IP assignment gracefully if Python is missing.
+This project is built with a minimalist vision: it relies strictly on standard built-in Linux utilities (bash, curl, sed). It features an automated setup wizard that auto-discovers your Roku over the local network using a transient Python SSDP probe and falls back to manual IP assignment gracefully if Python is missing.
 
 ## Quick Installation
 
@@ -21,7 +21,7 @@ curl -sSL https://raw.githubusercontent.com/kissmyfix/roku-remote/refs/heads/mai
 
 ---
 
-## Installation and First Run
+## Manual Installation and First Run
 
 1. Clone the repository and navigate into the directory:
    ```bash
